@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Quote>
+
+<h1>My Favorite Quotes</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                The Quote
+            </th>
+            <th>
+                Who Said It
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TheQuote)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WhoSaidIt)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
