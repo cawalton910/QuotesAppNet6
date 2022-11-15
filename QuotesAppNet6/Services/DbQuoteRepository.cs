@@ -6,9 +6,9 @@ namespace QuotesApp.Services;
 
 public class DbQuoteRepository : IQuoteRepository
 {
-    private QuotesDbContext _db;
+    private ApplicationDbContext _db;
 
-    public DbQuoteRepository(QuotesDbContext db)
+    public DbQuoteRepository(ApplicationDbContext db)
     {
         _db = db;
     }

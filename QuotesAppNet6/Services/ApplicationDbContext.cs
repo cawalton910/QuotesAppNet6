@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace QuotesApp.Services;
 
-public class QuotesDbContext : DbContext
+public class ApplicationDbContext : DbContext
 {
-    public QuotesDbContext(DbContextOptions options) : base(options)
+    public ApplicationDbContext(DbContextOptions options) : base(options)
     {
     }
 

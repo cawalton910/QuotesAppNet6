@@ -4,9 +4,9 @@ namespace QuotesApp.Services;
 
 public class Initializer
 {
-  private QuotesDbContext _db;
+  private ApplicationDbContext _db;
 
-  public Initializer(QuotesDbContext db)
+  public Initializer(ApplicationDbContext db)
   {
      _db = db;
   }
