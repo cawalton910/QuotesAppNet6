@@ -1,0 +1,43 @@
+﻿@model Quote
+<div class="modal fade" id="createQuoteModal" tabindex="-1" role="dialog" aria-labelledby="createPetModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div id="mainContent" class="modal-content">
+            <form id="createQuoteForm" asp-controller="Quote" asp-action="Create">
+                <div class="modal-header">
+                    <h5 class="modalTitle" id="createPetModalTitle">
+                        Create Quote
+                    </h5>
+                    <button type="button" class="btn-close"
+                            data-bs-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row mb-3">
+                        <label class="col-sm-2 col-form-label">
+                            TheQuote
+                        </label>
+                    <div class="col-sm-10">
+                        <input asp-for="TheQuote" class="form-control"/>
+                        <span asp-validation-for="TheQuote"></span>
+                    </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                        <label class="col-sm-2 col-form-label">
+                            WhoSaidIt
+                        </label>
+                        <div class="col-sm-10">
+                        <input asp-for="WhoSaidIt" class="form-control" />
+                        <span asp-validation-for="WhoSaidIt"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">
+                        Save
+                    </button>
+                    <button type="reset" class="btn btn-secondary">Clear</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

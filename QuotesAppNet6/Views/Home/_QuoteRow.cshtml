@@ -1,0 +1,12 @@
+﻿@model Quote
+<tr id="row-@Model.Id">
+    <td>
+        @Html.DisplayFor(modelItem => Model.Id)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => Model.TheQuote)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => Model.WhoSaidIt)
+    </td>
+</tr>

@@ -1,7 +1,8 @@
 ﻿@model IEnumerable<Quote>
 
 <h1>My Favorite Quotes</h1>
-
+<button type="button" class="btn btn-primary mb-3" id="btnCreateQuote">Create new</button>
+<partial name="_CreateQuoteModal" model="@new Quote()">
 <table class="table">
     <thead>
         <tr>
@@ -16,20 +17,16 @@
             </th>
         </tr>
     </thead>
-    <tbody>
+    <tbody id="tbody-quotes">
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Id)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TheQuote)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.WhoSaidIt)
-                </td>
-            </tr>
+                <partial name="_QuoteRow" model="@item" />
         }
     </tbody>
 </table>
+@section Scripts{
+    @{
+            <script src="~/js/homeIndex.js"></script>
+    }
+    
+}
