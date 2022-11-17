@@ -2,6 +2,9 @@
 
 <h1>My Favorite Quotes</h1>
 <button type="button" class="btn btn-primary mb-3" id="btnCreateQuote">Create new</button>
+<div id="alertArea" class="alert alert-info" role="alert" style="display:none">
+    <span id="messageArea"></span>
+</div>
 <partial name="_CreateQuoteModal" model="@new Quote()">
 <table class="table">
     <thead>

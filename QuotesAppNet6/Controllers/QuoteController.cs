@@ -24,7 +24,7 @@ namespace QuotesAppNet6.Controllers
         }
         public async Task<IActionResult> QuoteRow(int id)
         {
-            var quote = _quoteRepo.ReadAsync(id);
+            var quote = await _quoteRepo.ReadAsync(id);
             return PartialView("/Views/Home/_QuoteRow.cshtml", quote);
         }
         public IActionResult Index()

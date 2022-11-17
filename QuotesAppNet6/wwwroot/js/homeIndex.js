@@ -32,7 +32,13 @@
         }
         console.log(result);
         createQuoteModal.hide();
-        _updateQuotesTable(result.quoteid)
+        _updateQuotesTable(result.quoteId)
+        $('#messageArea').html("A new quote was added!");
+        $('#alertArea').show();
+        // After 500ms, fade out over 500ms
+        setInterval(() => {
+            $('#alertArea').fadeOut(500);
+        }, 500);
     }
     function _clearErrorMessages() {
         let spans = document.querySelectorAll('span[data-valmsg-for]');
@@ -42,11 +48,12 @@
     }
 
 })();
-async function _updateQuotesTable(quoteid) {
-    const url = `/quote/quoterow/${quoteid}`;
+async function _updateQuotesTable(quoteId) {
+    const url = `/quote/quoterow/${quoteId}`;
     const response = await fetch(url, {
         method: "get"
     });
-    var tbody = document.getElementById('tbody-quotes');
+    var result = await response.text();
+    console.log(result);
     $("#tbody-quotes").append(result);
 }
